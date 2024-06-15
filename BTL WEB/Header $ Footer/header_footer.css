@@ -1,0 +1,257 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: aquamarine;
+}
+
+li{
+    list-style: none;
+}
+
+header{
+    width: 100%;
+    padding:30px 9%;
+    background-color: rgba(246, 246, 246, 0.505);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .main-header{
+    display: flex;
+    height: 47px;
+    box-sizing: border-box;
+    width: auto;
+    margin-right: 20px;
+
+} */
+
+/* .main-header>a>ion-icon{
+    height: 37px;
+    width: 37px;
+    padding: 5px;
+    background-color: rgb(0, 142, 52);
+    color: white;
+
+} */
+
+.left_header{
+    display: flex;
+    flex-basis: 39%;
+}
+
+/* .menu{
+    display: flex;
+    height: 47px;
+    box-sizing: border-box;
+    width: auto;
+    margin-right: 20px;
+}
+
+.menu>a>ion-icon{
+    height: 37px;
+    width: 37px;
+    padding: 5px;
+    background-color: rgb(0, 142, 52);
+    color: white;
+
+} */
+
+
+.contact{
+    display: flex;
+    height: 47px;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.contact ion-icon{
+    width: 47px;
+    height: 47px;
+}
+
+.contact-detail{
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-detail>h3>a{
+    color: black;
+    font-weight: 900;
+}
+
+.contact-detail>h3>a:hover{
+    color: rgb(0, 142, 52);
+}
+
+.middle_header{
+    display: flex;
+    flex-basis: 20%;
+    height: 47px;
+}
+
+.right_header {
+    display: flex;
+    flex-basis: 39%;
+    flex-direction: row-reverse;
+}
+
+.right_header>a>ion-icon {
+    height: 47px;
+    width: 47px;
+    padding: 5px;
+    color: black;
+    /* background-color: rgb(0, 142, 52); */
+}
+
+.right_header>a:hover ion-icon {
+    color: rgb(0, 142, 52);
+}
+
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+ion-icon {
+    font-size: 24px; /* Bạn có thể thay đổi kích thước icon nếu cần */
+    display: block;
+}
+
+.count_item {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px; /* Điều chỉnh cho văn bản nằm giữa vòng tròn */
+}
+
+
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Thiết lập cho thanh menu chính */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 9%;
+    background-color: rgb(246, 246, 246, 0.505);
+}
+
+nav>ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav>ul>li>a{
+    color: black;
+    font-size: 17px;
+}
+
+nav>ul>li{
+    padding: 15px 0;
+    margin: 0 20px;
+}
+
+nav>ul>li:hover{
+    background-color: rgb(0, 0, 0);
+}
+
+.main{
+    width: 100%;
+    height: 500px;
+    background-color: rgb(212, 212, 212);
+    display: flex;
+    justify-content: center;
+    padding:20% 20%;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #252525;
+}
+
+.up-footer{
+    width: 100%;
+    display:flex;
+    padding: 30px 9%;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.281);
+}
+
+.up-footer-box1{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 37%;
+}
+
+.up-footer-box1>a>img{
+    margin-bottom: 15px;
+}
+
+
+.up-footer-box2{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    color: white;
+}
+
+li{
+    margin: 10px 0;
+}
+
+/* li>a:hover{
+    color: aquamarine;
+} */
+
+.in4{
+    display: flex;
+    margin: 15px 0;
+    color: white;
+    padding: auto 0;
+}
+
+ion-icon{
+    color: green;
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.line{
+    width: 20px;
+    border: 1px solid white;
+    margin: 20px 0 15px;
+}
+
+.bottom-footer{
+    width: 100%;
+    padding: 20px ;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
