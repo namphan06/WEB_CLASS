@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: rgb(0, 222, 148);
+}
+
+li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+ion-icon{
+    cursor: pointer;
+}
+
+.lienhe{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-gh{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.top-gh img{
+    width: 100%;
+    height: 100%;
+}
+
+.gh-title{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.gh-title h1{
+    margin-bottom: 5px;
+    font-size: 35px;
+} 
+
+.gh-title a{
+    color: black;
+}
+.gh-title a:hover{
+    color: rgb(0, 222, 148);
+}
+
+.gh-container{
+    width: 100%;
+    padding: 20px 9%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gh-left{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 68%;
+}
+
+.gh-box-left{
+    display: flex;
+}
+
+.gh-box-left img{
+    margin-right: 20px;
+}
+
+.gh-box-left h2{
+    margin-right: 20px;
+}
+
+.gh-box-left ul li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gh-right{
+    display: flex;
+    flex-basis: 28%;
+    flex-direction: column;
+}
+
+.gh-right>ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gh-right>ul>li{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    align-items: center;
+    padding-top: 15px;
+}
+
+
+.gh-right-title{
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    height: 284px;
+    margin-bottom: 20px;
+}
+
+.gh-right-title>ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gh-right-title>ul>li{
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
