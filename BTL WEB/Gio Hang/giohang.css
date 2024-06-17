@@ -6,14 +6,21 @@
 
 a{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 a:hover{
     color: rgb(0, 222, 148);
 }
 
+li{
+    list-style: none;
+    margin: 10px 0;
+}
 
+ion-icon{
+    cursor: pointer;
+}
 
 .lienhe{
     width: 100%;
@@ -66,14 +73,66 @@ a:hover{
 .gh-left{
     display: flex;
     flex-direction: column;
-    flex-basis: 58%;
+    flex-basis: 68%;
 }
 
 .gh-box-left{
-    
+    display: flex;
+}
+
+.gh-box-left img{
+    margin-right: 20px;
+}
+
+.gh-box-left h2{
+    margin-right: 20px;
+}
+
+.gh-box-left ul li{
+    display: flex;
+    justify-content: space-between;
 }
 
 .gh-right{
     display: flex;
-    flex-basis: 38%;
+    flex-basis: 28%;
+    flex-direction: column;
 }
+
+.gh-right>ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gh-right>ul>li{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    align-items: center;
+    padding-top: 15px;
+}
+
+
+.gh-right-title{
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    height: 284px;
+    margin-bottom: 20px;
+}
+
+.gh-right-title>ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gh-right-title>ul>li{
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+

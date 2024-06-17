@@ -10,7 +10,7 @@ a{
 }
 
 a:hover{
-    color: aquamarine;
+    color: rgb(0, 222, 148);
 }
 
 li{
@@ -55,7 +55,7 @@ li{
     color: black;
 }
 .htch-title a:hover{
-    color: aquamarine;
+    color: rgb(0, 222, 148);
 }
 
 .htch-slicer{
@@ -78,16 +78,18 @@ li{
     display: flex;
     flex-direction: column;
     flex-basis: 32%;
+    border: 1px solid blue;
 }
 
 .title{
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.297); 
     padding-bottom: 5px;
+    display: flex;
 }
 
 .number{
-    background-color: aquamarine;
+    background-color: rgb(0, 222, 148);
     color: white;
     /* display: flex; */
     padding: 2px;

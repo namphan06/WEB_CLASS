@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="showroom.css">
 </head>
 <body>
+    <div id="header"></div>
+
     <div class="hethongcuahang">
         <div class="top-htch">
             <img src="../img/Screenshot 2024-06-14 085651.png">
@@ -15,7 +17,7 @@
                 <div>
                     <a href="#">Trang chủ</a>
                     <ion-icon name="chevron-forward-outline"></ion-icon>
-                    <span style="color: aquamarine;">Hệ thống của hàng</span>
+                    <span style="color: rgb(0, 222, 148);">Hệ thống của hàng</span>
                 </div>
             </div>
         </div>
@@ -28,7 +30,8 @@
         <div class="htch-container">
             <div class="htch-box">
                 <h3 class="title">
-                    <span class="number">8</span> Phòng kinh doanh Doanh nghiệp - HN 
+                    <span style="background-color: yellow; padding: 5px; width: 10%; display: flex; justify-content: center;">8</span>
+                    <span style="background-color: blue; padding: 5px; color: white; width: 90%;">Phòng kinh doanh Doanh nghiệp - HN</span>
                 </h3>
 
                 <ul class="ul">
@@ -62,7 +65,8 @@
             </div>
             <div class="htch-box">
                 <h3 class="title">
-                    <span class="number">8</span> Phòng kinh doanh Doanh nghiệp - HN 
+                    <span style="background-color: yellow; padding: 5px; width: 10%; display: flex; justify-content: center;">8</span>
+                    <span style="background-color: blue; padding: 5px; color: white; width: 90%;">Phòng kinh doanh Doanh nghiệp - HN</span>
                 </h3>
 
                 <ul class="ul">
@@ -96,7 +100,8 @@
             </div>
             <div class="htch-box">
                 <h3 class="title">
-                    <span class="number">8</span> Phòng kinh doanh Doanh nghiệp - HN 
+                    <span style="background-color: yellow; padding: 5px; width: 10%; display: flex; justify-content: center;">8</span>
+                    <span style="background-color: blue; padding: 5px; color: white; width: 90%;">Phòng kinh doanh Doanh nghiệp - HN</span>
                 </h3>
 
                 <ul class="ul">
@@ -130,6 +135,46 @@
             </div>
         </div>
     </div>
+
+    <div id="footer"></div>
+
+    <script>
+        // Hàm loadFile để tải file HTML vào phần tử có ID cụ thể
+        function loadFile(filePath, elementId) {
+            fetch(filePath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+    
+        // Tải header_footer.html vào phần tử có id là 'header'
+        loadFile('../Header $ Footer/header.html', 'header');
+    
+        // Thêm file header_footer.css vào thẻ head của tài liệu
+        const headerLink = document.createElement('link');
+        headerLink.rel = 'stylesheet';
+        headerLink.href = '../Header $ Footer/header.css';
+        document.head.appendChild(headerLink);
+    
+        // Tải header_footer.html vào phần tử có id là 'footer'
+        loadFile('../Header $ Footer/footer.html', 'footer');
+    
+        // Thêm file header_footer.css vào thẻ head của tài liệu
+        const footerLink = document.createElement('link');
+        footerLink.rel = 'stylesheet';
+        footerLink.href = '../Header $ Footer/footer.css';
+        document.head.appendChild(footerLink);
+    </script>
+    
 
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
