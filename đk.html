@@ -8,6 +8,7 @@
   </head>
   <body>
     <div class="box">
+      <div id="header"></div>
       <div class="bck_header">
         <div class="head">
           <p style="cursor: context-menu">ĐĂNG KÝ TÀI KHOẢN</p>
@@ -65,6 +66,58 @@
             alt=""
         /></a>
       </div>
+      <div id="footer"></div>
+
+      <script>
+        // Hàm loadFile để tải file HTML vào phần tử có ID cụ thể
+        function loadFile(filePath, elementId) {
+          fetch(filePath)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(
+                  "Network response was not ok " + response.statusText
+                );
+              }
+              return response.text();
+            })
+            .then((data) => {
+              document.getElementById(elementId).innerHTML = data;
+            })
+            .catch((error) => {
+              console.error(
+                "There was a problem with the fetch operation:",
+                error
+              );
+            });
+        }
+
+        // Tải header_footer.html vào phần tử có id là 'header'
+        loadFile("./BTL WEB/Header $ Footer/header.html", "header");
+
+        // Thêm file header_footer.css vào thẻ head của tài liệu
+        const headerLink = document.createElement("link");
+        headerLink.rel = "stylesheet";
+        headerLink.href = "./BTL WEB/Header $ Footer/header.css";
+        document.head.appendChild(headerLink);
+
+        // Tải header_footer.html vào phần tử có id là 'footer'
+        loadFile("./BTL WEB/Header $ Footer/footer.html", "footer");
+
+        // Thêm file header_footer.css vào thẻ head của tài liệu
+        const footerLink = document.createElement("link");
+        footerLink.rel = "stylesheet";
+        footerLink.href = "./BTL WEB/Header $ Footer/footer.css";
+        document.head.appendChild(footerLink);
+      </script>
+
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      ></script>
+      <script
+        nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      ></script>
     </div>
   </body>
 </html>

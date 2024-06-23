@@ -143,49 +143,76 @@
     
 
     <script>
-        // Hàm loadFile để tải file HTML vào phần tử có ID cụ thể
-        function loadFile(filePath, elementId) {
-          fetch(filePath)
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error(
-                  "Network response was not ok " + response.statusText
+        document.addEventListener("DOMContentLoaded", function() {
+          function setupEventListeners() {
+            const menuLink = document.querySelector(".menu a");
+            const overlay = document.querySelector(".overlay");
+            const sidebar = document.querySelector(".sidebar");
+      
+            if (menuLink && overlay && sidebar) {
+              menuLink.addEventListener("click", function(event) {
+                event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+                overlay.style.display = "block";
+                sidebar.style.left = "0";
+              });
+      
+              overlay.addEventListener("click", function() {
+                overlay.style.display = "none";
+                sidebar.style.left = "-20%";
+              });
+            }
+          }
+      
+          // Hàm loadFile để tải file HTML vào phần tử có ID cụ thể
+          function loadFile(filePath, elementId) {
+            fetch(filePath)
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(
+                    "Network response was not ok " + response.statusText
+                  );
+                }
+                return response.text();
+              })
+              .then((data) => {
+                document.getElementById(elementId).innerHTML = data;
+                setupEventListeners(); // Đảm bảo sự kiện được thêm sau khi nội dung được tải
+              })
+              .catch((error) => {
+                console.error(
+                  "There was a problem with the fetch operation:",
+                  error
                 );
-              }
-              return response.text();
-            })
-            .then((data) => {
-              document.getElementById(elementId).innerHTML = data;
-            })
-            .catch((error) => {
-              console.error(
-                "There was a problem with the fetch operation:",
-                error
-              );
-            });
-        }
-  
-        // Tải header_footer.html vào phần tử có id là 'header'
-        loadFile("../Header $ Footer/header.html", "header");
-  
-        // Thêm file header_footer.css vào thẻ head của tài liệu
-        const headerLink = document.createElement("link");
-        headerLink.rel = "stylesheet";
-        headerLink.href = "../Header $ Footer/header.css";
-        document.head.appendChild(headerLink);
-  
-        const headerScript = document.createElement("script");
-        headerScript.src = "../fd_js/header.js";
-        document.head.appendChild(headerScript);
-  
-        // Tải header_footer.html vào phần tử có id là 'footer'
-        loadFile("../Header $ Footer/footer.html", "footer");
-  
-        const footerLink = document.createElement("link");
-        footerLink.rel = "stylesheet";
-        footerLink.href = "../Header $ Footer/footer.css";
-        document.head.appendChild(footerLink);
+              });
+          }
+      
+          // Tải header_footer.html vào phần tử có id là 'header'
+          loadFile("../Header $ Footer/header.html", "header");
+      
+          // Thêm file header_footer.css vào thẻ head của tài liệu
+          const headerLink = document.createElement("link");
+          headerLink.rel = "stylesheet";
+          headerLink.href = "../Header $ Footer/header.css";
+          document.head.appendChild(headerLink);
+      
+          const headerScript = document.createElement("script");
+          headerScript.src = "../fd_js/header.js";
+          document.head.appendChild(headerScript);
+      
+          // Tải header_footer.html vào phần tử có id là 'footer'
+          loadFile("../Header $ Footer/footer.html", "footer");
+      
+          const footerLink = document.createElement("link");
+          footerLink.rel = "stylesheet";
+          footerLink.href = "../Header $ Footer/footer.css";
+          document.head.appendChild(footerLink);
+        });
       </script>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      
+      </body>
+    </html>
   
 
 

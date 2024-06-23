@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.box {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.bck_header {
+  background-image: url(../image/background_header.jpg);
+  width: 100%;
+  padding: 60px 0 80px;
+  margin-bottom: 40px;
+}
+.bck_header .head {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 50px;
+  /* font-family: Arial, sans-serif; */
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.bck_header .tl {
+  text-align: center;
+  font-size: 15px;
+  /* font-family: Arial, sans-serif; */
+}
+.bck_header .tl a:hover {
+  color: #48cab2;
+}
+.bx1 {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+}
+.bx1 .menu {
+  padding: 0 50px;
+}
+.bx1 .menu .account {
+  display: flex;
+  padding-bottom: 20px;
+}
+.bx1 .menu img {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px 0 0;
+  border-radius: 50%;
+}
+.bx1 .menu .td {
+  padding-bottom: 20px;
+  color: #48cab2;
+}
+.bx1 .menu .lst > ul {
+  list-style: none;
+  padding-left: 10px;
+}
+.bx1 .menu .lst > ul > li {
+  padding-bottom: 10px;
+}
+.bx1 .menu .lst > ul > li a:hover {
+  color: #48cab2;
+}
+.bx1 .ipt {
+  padding: 50px 0;
+}
+.bx1 .ipt input {
+  width: 300px;
+  height: 30px;
+  padding: 10px 5px;
+  margin: 10px 0;
+  border: none;
+}
+.bx1 .ipt .iptk input {
+  width: 20px;
+  height: 15px;
+}
+.bx1 .btn button {
+  background-color: #48cab2;
+  color: white;
+  border-radius: 5px;
+  height: 30px;
+  padding: 0 5px;
+  border: none;
+}

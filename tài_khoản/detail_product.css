@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.box {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.bck_header {
+  background-image: url(../image/background_header.jpg);
+  width: 100%;
+  padding: 60px 0 80px;
+  margin-bottom: 40px;
+}
+.bck_header .head {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 50px;
+  /* font-family: Arial, sans-serif; */
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.bck_header .tl {
+  text-align: center;
+  font-size: 15px;
+  /* font-family: Arial, sans-serif; */
+}
+.bck_header .tl a:hover {
+  color: #48cab2;
+}
+.bx1 {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+}
+.bx1 .menu {
+  padding: 0 20px;
+}
+.bx1 .menu .account {
+  display: flex;
+  padding-bottom: 20px;
+}
+.bx1 .menu img {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px 0 0;
+  border-radius: 50%;
+}
+.bx1 .menu .td {
+  padding-bottom: 20px;
+  color: #48cab2;
+}
+.bx1 .menu .lst > ul {
+  list-style: none;
+  padding-left: 10px;
+}
+.bx1 .menu .lst > ul > li {
+  padding-bottom: 10px;
+}
+.bx1 .menu .lst > ul > li a:hover {
+  color: #48cab2;
+}
+.bx1 .ipt {
+  width: 100%;
+}
+.bx1 .ipt .top {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.63);
+}
+.bx1 .ipt .detail {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.bx1 .ipt .detail .bx {
+  display: flex;
+}
+.bx1 .ipt .sp .bx {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(128, 128, 128, 0.63);
+}
+.bx1 .ipt .sp .bx .tt {
+  display: flex;
+}
+.bx1 .ipt .sp .bx .tt img {
+  height: 100px;
+}
+.bx1 .ipt .sp .bx .tt .tl {
+  padding: 30px 10px;
+}
+.bx1 .ipt .sp .bx .cost {
+  padding: 30px 10px;
+}
+.bx1 .ipt .sp .bx .cost .btn a {
+  border: 1px solid rgba(128, 128, 128, 0.37);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.bx1 .ipt .sp .bx .cost .btn {
+  margin-top: 10px;
+  text-align: center;
+}
+.bx1 .ipt .total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(128, 128, 128, 0.63);
+}
+.bx1 .ipt .total .btn a {
+  background-color: #48cab2;
+  padding: 5px 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  color: aliceblue;
+}
+.bx1 .ipt .total .btn {
+  margin-top: 10px;
+  text-align: center;
+}

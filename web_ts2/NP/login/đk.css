@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.box {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.bck_header {
+  background-image: url(../image/background_header.jpg);
+  width: 100%;
+  padding: 60px 0 80px;
+  margin-bottom: 40px;
+}
+.bck_header .head {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 50px;
+  /* font-family: Arial, sans-serif; */
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.bck_header .tl {
+  text-align: center;
+  font-size: 15px;
+  /* font-family: Arial, sans-serif; */
+}
+.bck_header .tl a:hover {
+  color: #48cab2;
+}
+
+.box .title {
+  text-align: center;
+  font: 18px;
+  margin-bottom: 20px;
+}
+.bx-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bx-input .input-box {
+  display: flex;
+  padding: 0 15px;
+  font-size: 14px;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 50%;
+}
+.bx-input .input-box input {
+  height: 50px;
+  padding: 0 20px;
+  color: #252525;
+  border: 1px solid #eaebf3;
+  width: 100%;
+  margin-top: 5px;
+  outline: none;
+}
+.bx-input .input-box label {
+  font-size: 16px;
+  margin: 0 0 5px;
+  display: block;
+  font-weight: bold;
+}
+.btn {
+  text-align: center;
+}
+.btn input:hover {
+  background-color: white;
+  color: #48cab2;
+  cursor: pointer;
+}
+
+.btn input {
+  color: #fff;
+  background-color: #48cab2;
+  border: solid 1px #48cab2;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  padding: 0 20px;
+  width: 50%;
+  margin-bottom: 20px;
+}
+.lg {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.lk {
+  text-align: center;
+}
+.lk a img {
+  width: 129px;
+  height: 36.26px;
+}
+@media (max-width: 740px) {
+  .bx-input .input-box {
+    width: 100%;
+  }
+  .btn button {
+    width: 100%;
+  }
+}

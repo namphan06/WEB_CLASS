@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="đk.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <div id="header"></div>
+      <div class="bck_header">
+        <div class="head">
+          <p style="cursor: context-menu">ĐĂNG KÝ TÀI KHOẢN</p>
+        </div>
+        <div class="tl">
+          <a href="../homepage/homepage.html">Trang chủ</a>
+          <span
+            ><b> <i class="fa-solid fa-chevron-right"></i> </b
+          ></span>
+          <a href="" style="color: #48cab2">Đăng nhập tài khoản </a>
+        </div>
+      </div>
+      <div class="title"><p style="cursor: context-menu">ĐĂNG KÝ</p></div>
+      <form>
+        <div class="bx-input">
+          <div class="input-box">
+            <label for="">Họ<sup style="color: red">*</sup></label>
+            <input type="text" placeholder="Họ" />
+          </div>
+          <div class="input-box">
+            <label for="">Tên<sup style="color: red">*</sup></label>
+            <input type="text" placeholder="Tên" />
+          </div>
+          <div class="input-box">
+            <label for="">Email<sup style="color: red">*</sup></label>
+            <input type="text" placeholder="Email" />
+          </div>
+          <div class="input-box">
+            <label for="">Số điện thoại<sup style="color: red">*</sup></label>
+            <input type="text" placeholder="Số điện thoại" />
+          </div>
+          <div class="input-box">
+            <label for="">Mật khẩu<sup style="color: red">*</sup></label>
+            <input type="password" placeholder="Mật khẩu" />
+          </div>
+        </div>
+        <div class="btn">
+          <input type="submit" value="Đăng ký" />
+        </div>
+      </form>
+      <div class="lg">
+        <span style="cursor: context-menu">Đã có tài khoản, đăng nhập </span
+        ><a href="./đn.html" style="text-decoration: underline">tại đây</a>
+      </div>
+      <div class="lk">
+        <p style="margin-bottom: 15px; cursor: context-menu">
+          Hoặc đăng nhập bằng
+        </p>
+        <a href=""
+          ><img
+            src="https://bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"
+            alt=""
+        /></a>
+        <a href=""
+          ><img
+            src="https://bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"
+            alt=""
+        /></a>
+      </div>
+      <div id="footer"></div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          function setupEventListeners() {
+            const menuLink = document.querySelector(".menu a");
+            const overlay = document.querySelector(".overlay");
+            const sidebar = document.querySelector(".sidebar");
+      
+            if (menuLink && overlay && sidebar) {
+              menuLink.addEventListener("click", function(event) {
+                event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+                overlay.style.display = "block";
+                sidebar.style.left = "0";
+              });
+      
+              overlay.addEventListener("click", function() {
+                overlay.style.display = "none";
+                sidebar.style.left = "-28%";
+              });
+            }
+          }
+      
+          // Hàm loadFile để tải file HTML vào phần tử có ID cụ thể
+          function loadFile(filePath, elementId) {
+            fetch(filePath)
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(
+                    "Network response was not ok " + response.statusText
+                  );
+                }
+                return response.text();
+              })
+              .then((data) => {
+                document.getElementById(elementId).innerHTML = data;
+                setupEventListeners(); // Đảm bảo sự kiện được thêm sau khi nội dung được tải
+              })
+              .catch((error) => {
+                console.error(
+                  "There was a problem with the fetch operation:",
+                  error
+                );
+              });
+          }
+      
+          // Tải header_footer.html vào phần tử có id là 'header'
+          loadFile("../Header $ Footer/header.html", "header");
+      
+          // Thêm file header_footer.css vào thẻ head của tài liệu
+          const headerLink = document.createElement("link");
+          headerLink.rel = "stylesheet";
+          headerLink.href = "../Header $ Footer/header.css";
+          document.head.appendChild(headerLink);
+      
+          const headerScript = document.createElement("script");
+          headerScript.src = "../fd_js/header.js";
+          document.head.appendChild(headerScript);
+      
+          // Tải header_footer.html vào phần tử có id là 'footer'
+          loadFile("../Header $ Footer/footer.html", "footer");
+      
+          const footerLink = document.createElement("link");
+          footerLink.rel = "stylesheet";
+          footerLink.href = "../Header $ Footer/footer.css";
+          document.head.appendChild(footerLink);
+        });
+      </script>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      
+      </body>
+    </html>
+  

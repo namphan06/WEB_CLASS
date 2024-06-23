@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+.header .left {
+  display: flex;
+}
+.header .left .menu {
+  display: flex;
+  padding: 0 20px;
+}
+.header .left .menu .ic {
+  background-color: #48cab2;
+  padding: 7px;
+  width: 30px;
+  height: 30px;
+}
+.header .left .menu p {
+  padding: 5px 10px;
+}
+.header .left .menu .drop-down {
+  position: absolute;
+  background-color: white;
+  left: 0;
+  display: none;
+}
+.header .left .menu .drop-down > li a {
+  padding: 10px;
+  padding-bottom: 30px;
+  color: black;
+  text-decoration: none;
+}
+.header .left .menu .drop-down > li {
+  padding-bottom: 30px;
+}
+.header .left .menu:hover > ul {
+  display: block;
+}
+.header .left .phone {
+  display: flex;
+}
+.header .left .phone .ic {
+  font-size: 30px;
+  padding: 0 10px;
+}
+.header .right {
+  line-height: 50px;
+}
+.header .right a {
+  padding: 0 10px;
+  color: black;
+}

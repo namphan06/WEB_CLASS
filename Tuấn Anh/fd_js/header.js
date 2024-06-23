@@ -6,5 +6,5 @@ document.querySelector(".menu a").addEventListener("click", function (event) {
 
 document.querySelector(".overlay").addEventListener("click", function () {
   this.style.display = "none";
-  document.querySelector(".sidebar").style.left = "-20%";
+  document.querySelector(".sidebar").style.left = "-25%";
 });
