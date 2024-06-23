@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <!-- link file css -->
+    <link rel="stylesheet" href="../basic_Css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- link google font monterat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- ______________________________chi tiết về sản phẩm đã chọn _______________________________________ -->
+    <div class="wrapper">
+        <div class="box-left">
+            <div class="main-product">
+                <ul class="listImage">
+                    <!-- 4 ảnh có kích thước giống nhau  -->
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/11/21/887f219fcd5f92ec7532744422857c89.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/c54474f7a6f14a017641641ab2b3c5ed.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/0c632139096976c9a54c115d304e8bf3.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/124300c1e9a7ee1059566027f55e4f62.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/e65d233c895c9049a943c9ff072d23ad.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/8c65789efb715c9e01d8a7c5481c24dd.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/4e3ab36155b87fe5690e6394e821deb0.webp" ></li>
+                </ul>  
+                <!-- nút chuyển ảnh  -->
+                <div class="btns">
+                    <div class="btn-left btn">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div class="btn-right btn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>          
+            </div>
+            <script>
+                // vòng lặp ảnh 
+                const listImage = document.querySelector('.listImage')
+                const imgs = document.getElementsByTagName('img')
+                const lenth = imgs.length
+                let current = 0
+                setInterval(()=> {
+                    if(current == lenth - 1){
+                        current = 0
+                        let width = imgs[0].offsetWidth
+                        listImage.style.transform = `translateX(0px)`
+
+                    } else {
+                        current ++
+                        let width = imgs[0].offsetWidth
+                        // *-1 để dịch sang bên phải thay vì bên trái mỗi 735px nên chỉ đc 1 ảnh kế tiếp
+                        listImage.style.transform = `translateX(${width*-1*current}px)`
+                
+                    }
+
+                },4000)
+
+                // nút thay đổi ảnh 
+                const btnLeft = document.querySelector('.btn-left')
+                const btnRight = document.querySelector('.btn-right')
+                // thay đổi theo kích thước chiều ngang ảnh 
+                const handleChangeSlide = () => {
+                    if(current == lenth - 1){
+                        current = 0
+                        let width = imgs[0].offsetWidth
+                        listImage.style.transform = `translateX(0px)`
+
+                    } else {
+                        current ++
+                        let width = imgs[0].offsetWidth
+                        // *-1 để dịch sang bên phải thay vì bên trái mỗi 735px nên chỉ đc 1 ảnh kế tiếp
+                        listImage.style.transform = `translateX(${width*-1*current}px)`
+                
+                    }
+                }
+                let handleEventChangeSlide = setInterval(handleChangeSlide,4000)
+                btnRight.addEventListener('click', () => {
+                    clearInterval(handleEventChangeSlide)
+                    handleChangeSlide()
+                    handleEventChangeSlide = setInterval(handleChangeSlide,4000) // tránh bị chồng event
+                })
+                btnLeft.addEventListener('click', ()=>{
+                    clearInterval(handleEventChangeSlide)
+                    if(current == 0){
+                        current = lenth - 1
+                        let width = imgs[0].offsetWidth
+                        listImage.style.transform = `translateX(${width*-1*current}px)`
+
+                    } else {
+                        current --
+                        let width = imgs[0].offsetWidth
+                        // *-1 để dịch sang bên phải thay vì bên trái mỗi 735px nên chỉ đc 1 ảnh kế tiếp
+                        listImage.style.transform = `translateX(${width*-1*current}px)`
+                
+                    }
+                    handleEventChangeSlide = setInterval(handleChangeSlide,4000) // tránh bị chồng event
+                })
+
+            </script>
+            <div class="extra-product">
+                <ul>
+                    <!-- 4 ảnh có kích thước giống nhau  -->
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/887f219fcd5f92ec7532744422857c89.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/c54474f7a6f14a017641641ab2b3c5ed.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/0c632139096976c9a54c115d304e8bf3.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/124300c1e9a7ee1059566027f55e4f62.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/e65d233c895c9049a943c9ff072d23ad.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/8c65789efb715c9e01d8a7c5481c24dd.webp" ></li>
+                    <li><img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/4e3ab36155b87fe5690e6394e821deb0.webp" ></li>
+                </ul>
+            </div>
+            <script></script>
+
+        </div>
+
+        <div class="box-right">
+            <h1 class="title-main">ĐẦM HOA DÁNG A</h1>
+            <!-- đánh giá sản phẩm  -->
+            <div class="detail-product">
+                <p>SKU:<span class="MSP">48M8653</span></p>
+                <ul>
+                    <!-- 4 sao -->
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-regular fa-star"></i></i></li>
+                </ul>
+                <span style="margin-left: 15px;">(16 đánh giá)</span>
+            </div>
+
+            <!-- giá bán sản phẩm  -->
+            <div class="price">
+                <p>636.000đ</p>
+                <p style="text-decoration: line-through; color: #565252; font-size: 18px;">1.590.000đ</p>
+                <div class="sale">
+                    <span>-60%</span>
+                </div>
+            </div>
+
+
+
+            <!-- lựa chọn sản phẩm  -->
+            <div class="color-product">
+                <div class="title-color">
+                    <p>Màu sắc: Họa tiết Hồng nhạt</p>
+                </div>
+
+                <div class="option-color">
+                    <div class="option1 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <div class="option2 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+                    
+
+
+                </div>
+
+                
+            </div>
+
+            <!-- lựa chọn size sản phẩm -->
+            <div class="size-product">
+                <div class="option-size">
+                    <ul>
+                        <li>
+                            <input type="radio" value="S" name="size">
+                            <p>S</p>
+                        </li>
+                        <li>
+                            <input type="radio" value="M" name="size">
+                            <p>M</p>
+                        </li>
+                        <li>
+                            <input type="radio" value="L" name="size">
+                            <p>L</p>
+                        </li>
+                        <li>
+                            <input type="radio" value="XL" name="size">
+                            <p>XL</p>
+                        </li>
+                        <li>
+                            <input type="radio" value="XXL" name="size"> 
+                            <p>XXL</p>
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                    // js 
+                </script>
+
+
+                <!-- bang hương dẫn chọn size  -->
+                <a href="#">Kiểm tra size của bạn</a>
+                <div class="bang_chon_size">
+                    <h1>BẢNG TƯ VẤN SIZE</h1>
+                    <div class="tab">
+                        <ul class="nav-tabs">
+                            <li><a href="" class="active">Nam</a></li>
+                            <li><a href="">Nữ</a></li>
+                            <li><a href="">Trẻ em</a></li>
+                            <li><a href="">Giầy Kids</a></li>
+                            <li><a href="">IVY Secret</a></li>
+                        </ul>
+
+                        <!-- ---------------------------NAM---------------------------- -->
+                        <div class="tab-content">
+                            <div class="tab-content-item">
+                                <table border="1">
+
+                                 <!-- size áo  -->
+                                    <tr class="table-title">
+                                        <td>SIZE ÁO NAM</td>
+                                    </tr>
+
+                                    <tr class="table-header">
+                                        <td>STT</td>
+                                        <td>TÊN GỌI/SIZE</td>
+                                        <td>S</td>
+                                        <td>M</td>
+                                        <td>L</td>
+                                        <td>XL</td>
+                                        <td>XXL</td>
+                                    </tr>
+
+                                    <!-- cổ  -->
+                                    <tr class="table-cont">
+                                        <td>1</td>
+                                        <td>Cổ</td>
+                                        <td>36</td>
+                                        <td>38</td>
+                                        <td>40</td>
+                                        <td>42</td>
+                                        <td>44</td>
+                                    </tr>
+
+                                    <!-- vai -->
+                                    <tr class="table-cont">
+                                        <td>2</td>
+                                        <td>Vai</td>
+                                        <td>44</td>
+                                        <td>45</td>
+                                        <td>46</td>
+                                        <td>47</td>
+                                        <td>48</td>
+                                    </tr>
+
+                                    <!-- ngực -->
+                                    <tr class="table-cont">
+                                        <td>3</td>
+                                        <td>Ngực</td>
+                                        <td>36</td>
+                                        <td>38</td>
+                                        <td>40</td>
+                                        <td>42</td>
+                                        <td>44</td>
+                                    </tr>
+
+                                    <!-- eo  -->
+                                    <tr class="table-cont">
+                                        <td>4</td>
+                                        <td>Eo</td>
+                                        <td>88</td>
+                                        <td>92</td>
+                                        <td>96</td>
+                                        <td>100</td>
+                                        <td>104</td>
+                                    </tr>
+                                    <!-- ------------------------------------------------------------------------------------ -->
+                                <!-- size quần  -->
+                                    <tr class="table-title">
+                                        <td>SIZE QUẦN</td>
+                                    </tr>
+
+                                    <tr class="table-header">
+                                        <td>STT</td>
+                                        <td>TÊN GỌI/SIZE</td>
+                                        <td>S(26)</td>
+                                        <td>M(30)</td>
+                                        <td>L(31)</td>
+                                        <td>XL(32)</td>
+                                        <td>XXL(33)</td>
+                                    </tr>
+
+                                    <!-- Vòng eo  -->
+                                    <tr class="table-cont">
+                                        <td>1</td>
+                                        <td>Vòng Eo</td>
+                                        <td>76</td>
+                                        <td>80</td>
+                                        <td>84</td>
+                                        <td>86</td>
+                                        <td>90</td>
+                                    </tr>
+
+                                    <!-- vòng mông -->
+                                    <tr class="table-cont">
+                                        <td>2</td>
+                                        <td>Vòng Mông</td>
+                                        <td>91</td>
+                                        <td>95</td>
+                                        <td>99</td>
+                                        <td>104</td>
+                                        <td>109</td>
+                                    </tr>
+
+                                    <!-- Cân nặng (KG) -->
+                                    <tr class="table-cont">
+                                        <td>3</td>
+                                        <td>Cân nặng (KG)</td>
+                                        <td>62 - 68</td>
+                                        <td>68 - 70</td>
+                                        <td>70 - 74</td>
+                                        <td>74 - 78</td>
+                                        <td>78 - 82</td>
+                                    </tr>
+
+                                    <!-- Chiều Cao (cm) -->
+                                    <tr class="table-cont">
+                                        <td>4</td>
+                                        <td>Chiều Cao (cm)</td>
+                                        <td>162 - 168</td>
+                                        <td>168 - 172</td>
+                                        <td>172 - 176</td>
+                                        <td>176 - 180</td>
+                                        <td>180 - 184</td>
+                                    </tr>
+
+                                <!-- size giầy dép  -->
+                                    <tr class="table-title">
+                                        <td>SIZE GIẦY DÉP</td>
+                                    </tr>
+
+                                    <tr class="table-header">
+                    
+                                        <td>TÊN GỌI/SIZE</td>
+                                        <td>39</td>
+                                        <td>40</td>
+                                        <td>41</td>
+                                        <td>42</td>
+                                        <td>43</td>
+                                        <td>44</td>
+                                    </tr>
+
+                                    <!-- Chiều dài bàn chân  -->
+                                    <tr class="table-cont">
+                                        
+                                        <td>Chiều dài bàn chân</td>
+                                        <td>20,5</td>
+                                        <td>26</td>
+                                        <td>26,9</td>
+                                        <td>27,7</td>
+                                        <td>28,5</td>
+                                        <td>29,4</td>
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                        <!-- ---------------------------NỮ------------------------------------>
+                            <div class="tab-content-item">
+                                <table border="1">
+                                <!-- size váy nữ -->
+                                    <tr class="table-title">
+                                        <td>SIZE VÁY ÁO NỮ</td>
+                                    </tr>
+
+                                    <tr class="table-header">
+                                        <td>STT</td>
+                                        <td>TÊN GỌI/SIZE</td>
+                                        <td>S</td>
+                                        <td>M</td>
+                                        <td>L</td>
+                                        <td>XL</td>
+                                        <td>XXL</td>
+                                    </tr>
+
+                                    <!-- vai  -->
+                                    <tr class="table-cont">
+                                        <td>1</td>
+                                        <td>Vai</td>
+                                        <td>36</td>
+                                        <td>37</td>
+                                        <td>38</td>
+                                        <td>39</td>
+                                        <td>40</td>
+                                    </tr>
+
+                                    <!-- ngực -->
+                                    <tr class="table-cont">
+                                        <td>2</td>
+                                        <td>Ngực</td>
+                                        <td>82</td>
+                                        <td>86</td>
+                                        <td>90</td>
+                                        <td>94</td>
+                                        <td>98</td>
+                                    </tr>
+
+                                    <!-- eo -->
+                                    <tr class="table-cont">
+                                        <td>3</td>
+                                        <td>Eo</td>
+                                        <td>64</td>
+                                        <td>68</td>
+                                        <td>72</td>
+                                        <td>76</td>
+                                        <td>80</td>
+                                    </tr>
+
+                                    <!-- hông  -->
+                                    <tr class="table-cont">
+                                        <td>4</td>
+                                        <td>Hông</td>
+                                        <td>88</td>
+                                        <td>92</td>
+                                        <td>96</td>
+                                        <td>100</td>
+                                        <td>104</td>
+                                    </tr>
+
+                                <!-- size quần  -->
+                                    <tr class="table-title">
+                                        <td>SIZE QUẦN</td>
+                                    </tr>
+
+                                    <tr class="table-header">
+                                        <td>STT</td>
+                                        <td>TÊN GỌI/SIZE</td>
+                                        <td>S(26)</td>
+                                        <td>M(27)</td>
+                                        <td>L(28)</td>
+                                        <td>XL(29)</td>
+                                        <td>XXL(30)</td>
+                                    </tr>
+
+                                    <!-- Vòng eo  -->
+                                    <tr class="table-cont">
+                                        <td>1</td>
+                                        <td>Vòng Eo</td>
+                                        <td>64</td>
+                                        <td>68</td>
+                                        <td>72</td>
+                                        <td>76</td>
+                                        <td>80</td>
+                                    </tr>
+
+                                    <!-- vòng mông -->
+                                    <tr class="table-cont">
+                                        <td>2</td>
+                                        <td>Vòng Mông</td>
+                                        <td>88</td>
+                                        <td>92</td>
+                                        <td>96</td>
+                                        <td>100</td>
+                                        <td>104</td>
+                                    </tr>
+
+                                    <!-- vòng bụng  -->
+                                    <tr class="table-cont">
+                                        <td>3</td>
+                                        <td>Vòng bụng</td>
+                                        <td>68</td>
+                                        <td>72</td>
+                                        <td>76</td>
+                                        <td>80</td>
+                                        <td>84</td>
+                                    </tr> 
+
+                                    <!--dài quần -->
+                                    <tr class="table-cont">
+                                        <td>4</td>
+                                        <td>Dài Quần</td>
+                                        <td>96</td>
+                                        <td>97</td>
+                                        <td>99</td>
+                                        <td>100</td>
+                                        <td>101</td>
+                                    </tr> 
+
+                                <!-- size giầy dép  -->
+                                    <tr class="table-title">
+                                        <td>SIZE GIẦY DÉP</td>
+                                    </tr>
+
+                                    <tr class="table-header">
+                    
+                                        <td>TÊN GỌI/SIZE</td>
+                                        <td>39</td>
+                                        <td>40</td>
+                                        <td>41</td>
+                                        <td>42</td>
+                                        <td>43</td>
+                                        <td>44</td>
+                                    </tr>
+
+                                    <!-- Chiều dài bàn chân  -->
+                                    <tr class="table-cont">
+                                        
+                                        <td>Chiều dài bàn chân</td>
+                                        <td>20,5</td>
+                                        <td>26</td>
+                                        <td>26,9</td>
+                                        <td>27,7</td>
+                                        <td>28,5</td>
+                                        <td>29,4</td>
+                                    </tr>
+                                <!-- size giầy dép  -->
+                                    <tr class="table-title">
+                                        <td>SIZE GIÀY DÉP</td>
+                                    </tr>
+
+                                    <tr class="table-header">
+                    
+                                        <td>TÊN GỌI/SIZE</td>
+                                        <td>34</td>
+                                        <td>35</td>
+                                        <td>36</td>
+                                        <td>37</td>
+                                        <td>38</td>
+                                        <td>39</td>
+                                    </tr>
+
+                                    <!-- Chiều dài bàn chân  -->
+                                    <tr class="table-cont">
+                                        
+                                        <td>Chiều dài bàn chân</td>
+                                        <td>20,5</td>
+                                        <td>21,5</td>
+                                        <td>22 - 22,5</td>
+                                        <td>23</td>
+                                        <td>23,8 - 24,1</td>
+                                        <td>24,5</td>
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                        <!-- ---------------------------TRẺ EM---------------------->
+                            <div class="tab-content-item">
+                                <table border="1">
+                                    <tr class="table-title">
+                                        <td>SIZE VÁY ÁO TRẺ EM</td>
+                                    </tr>
+                        
+                                    <tr class="table-header">
+                                        <td>STT</td>
+                                        <td>CỠ / TUỔI</td>
+                                        <td>4-5</td>
+                                        <td>6-7</td>
+                                        <td>8-9</td>
+                                        <td>10-11</td>
+                                        <td>12-13</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                                        <td>1</td>
+                                        <td>CHIỀU CAO (CM)</td>
+                                        <td>110</td>
+                                        <td>122</td>
+                                        <td>133</td>
+                                        <td>150</td>
+                                        <td>155</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                                        <td>2</td>
+                                        <td>CÂN NẶNG (KG)</td>
+                                        <td>15-20</td>
+                                        <td>20-25</td>
+                                        <td>23-29</td>
+                                        <td>28-35</td>
+                                        <td>34-43</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                                        <td>3</td>
+                                        <td>RỘNG VAI</td>
+                                        <td>29</td>
+                                        <td>30</td>
+                                        <td>31</td>
+                                        <td>32</td>
+                                        <td>33</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                                        <td>4</td>
+                                        <td>VÒNG NGỰC</td>
+                                        <td>59</td>
+                                        <td>65</td>
+                                        <td>68</td>
+                                        <td>74</td>
+                                        <td>79</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                                        <td>5</td>
+                                        <td>VÒNG BỤNG</td>
+                                        <td>54</td>
+                                        <td>59</td>
+                                        <td>62</td>
+                                        <td>65</td>
+                                        <td>69</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                                        <td>6</td>
+                                        <td>VÒNG MÔNG</td>
+                                        <td>61</td>
+                                        <td>66</td>
+                                        <td>70</td>
+                                        <td>75</td>
+                                        <td>80</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                                        <td>7</td>
+                                        <td>DÀI TAY</td>
+                                        <td>40</td>
+                                        <td>43</td>
+                                        <td>47</td>
+                                        <td>50</td>
+                                        <td>53</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                                        <td>8</td>
+                                        <td>CHIỀU DÀI TỪ ĐŨNG ĐẾN ỐNG</td>
+                                        <td>42</td>
+                                        <td>52</td>
+                                        <td>59</td>
+                                        <td>66</td>
+                                        <td>72</td>
+                                    </tr>
+                                    <tr class="table-title">
+                                        <td>*Số đo trong " BẢNG THÔNG BÁO " là số đo cơ thể không phải số đo quần áo</td>
+                                    </tr>
+                                </table>
+                        
+                            </div>  
+                        
+                        <!-- ---------------------------giày trẻ em---------------------- -->
+                            <div class="tab-content-item">
+                                <table border="1">
+                                    <tr class="table-title">
+                                        <td>BẢNG THÔNG SỐ KÍCH THƯỚC GIÀY TRẺ EM</td>
+                                    </tr>
+                        
+                                    <tr class="table-header">
+                                        <td>Size theo web</td>
+                                        <td>Chiều dài</td>
+                                        <td>Size số</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                        
+                                        <td>Size 4-5</td>
+                                        <td>18 cm</td>
+                                        <td>29</td>
+                                    </tr>
+                        
+                                    
+                                    <tr class="table-cont">
+                        
+                                        <td>Size 5-6</td>
+                                        <td>19 cm</td>
+                                        <td>30</td>
+                                    </tr>
+                        
+                        
+                                    <tr class="table-cont">
+                        
+                                        <td>Size 6-7</td>
+                                        <td>20 cm</td>
+                                        <td>31</td>
+                                    </tr>
+                        
+                                    
+                                    <tr class="table-cont">
+                        
+                                        <td>Size 7-8</td>
+                                        <td>21 cm</td>
+                                        <td>32</td>
+                                    </tr>
+                        
+                                    
+                                    <tr class="table-cont">
+                        
+                                        <td>Size 8-9</td>
+                                        <td>22 cm</td>
+                                        <td>33</td>
+                                    </tr>
+                        
+                                    
+                                    <tr class="table-cont">
+                        
+                                        <td>Size 9-10</td>
+                                        <td>23 cm</td>
+                                        <td>34</td>
+                                    </tr>
+                        
+                                    
+                                    <tr class="table-cont">
+                        
+                                        <td>Size 10-11</td>
+                                        <td>24 cm</td>
+                                        <td>35</td>
+                                    </tr>
+                        
+                                    
+                                    <tr class="table-cont">
+                        
+                                        <td>Size 11-12</td>
+                                        <td>25 cm</td>
+                                        <td>36</td>
+                                    </tr>
+                        
+                        
+                                </table>
+                        
+                            </div>   
+                            
+                        <!-- ---------------------------secret-----------------------  -->
+                            <div class="tab-content-item">
+                                <table border="1">
+                                    <tr class="table-title">
+                                        <td>Bảng size IVY SECRET</td>
+                                    </tr>
+                        
+                                    <tr class="table-header">
+                                        <td>Size</td>
+                                        <td>Size áo ngực</td>
+                                        <td>Size trên mác</td>
+                                        <td>Vòng chân ngực (cm)</td>
+                                        <td>Vòng đỉnh ngực</td>
+                                        
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                        
+                                        <td>Size S</td>
+                                        <td>34</td>
+                                        <td>75A</td>
+                                        <td>68-72</td>
+                                        <td>81-83</td>
+                                    </tr>
+                        
+                                    
+                                    <tr class="table-cont">
+                        
+                                        <td>Size M</td>
+                                        <td>36</td>
+                                        <td>75B</td>
+                                        <td>68-72</td>
+                                        <td>84-86</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                        
+                                        <td>Size L</td>
+                                        <td>38</td>
+                                        <td>80A</td>
+                                        <td>73-77</td>
+                                        <td>85-87</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                        
+                                        <td>Size XL</td>
+                                        <td>40</td>
+                                        <td>80B</td>
+                                        <td>73-77</td>
+                                        <td>88-90</td>
+                                    </tr>
+                        
+                                    <tr class="table-cont">
+                        
+                                        <td>Size XXL</td>
+                                        <td>42</td>
+                                        <td>85A</td>
+                                        <td>78-82</td>
+                                        <td>89-91</td>
+                                    </tr>
+                        
+                        
+                                </table>
+                        
+                            </div>  
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- số lượng  -->
+            <div class="many">
+                <label >Số lượng: </label>
+                <div class="so_luong">
+                    <div class="bot" >
+                        <i class="fa-solid fa-minus"></i>
+                    </div>
+                    <div class="tong">
+                        <span id="count">0</span>
+                    </div>
+                    <div class="them">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="con">
+                    <p>Còn <span class="con_sp">125</span> sản phẩm</p>
+                </div>
+            </div>
+            <script>
+                var count = 0;
+                const them = document.querySelector('.them')
+                const bot = document.querySelector('.bot')
+                const tong = document.querySelector('#count')
+                them.addEventListener('click', ()=>{
+                    if(count < 126){
+                        count++
+                        tong.innerText = count;
+                    }
+
+                })
+                bot.addEventListener('click', ()=>{
+                    if(count > 0 ){
+                        count--
+                        tong.innerText = count;
+                        // sửa trực tiếp qua id 
+                    }
+                })
+            </script>
+
+            <!-- mua  -->
+
+            <div class="buy-product">
+                
+                <input type="button" value="Thêm vào giỏ hàng" id="them_vao_gio_hang">
+
+                <a href="" class="buy">
+                    <p>Mua ngay</p>
+                </a>
+                
+                
+                <button class="regular" onclick="regular()">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <button class="solid" onclick="solid()">
+                    <i class="fa-solid fa-heart"></i>
+                </button>
+            </div>
+
+            <a href="" class="shop_address">Tìm tại cửa hàng</a>
+
+            <!-- chi tiết sản phẩm  -->
+            <div class="tab">
+                <ul class="nav-tabs">
+                    <li><a href="">GIỚI THIỆU</a></li>
+                    <li><a href="">CHI TIẾT SẢN PHẨM </a></li>
+                    <li><a href="">BẢO QUẢN</a></li>
+                </ul>
+
+                <!-- giới thiệu  -->
+                <div class="tab-content">
+                    <div class="tab-content-item">
+                        <p>
+                            Nàng nhhẹ nhàng, mềm mại trong thiết kế đầm hoa yêu kiều. Đầm cổ thuyền, có độ dài qua gối cùng kiểu dáng chữ A quen thuộc,
+                             khéo léo tôn lên nét đẹp dịu dàng của người mặc. Thiết kế tạo điểm nhấn thắt đai ngang eo, giúp che khuyết điểm tốt. 
+                        </p>
+                        <p>
+                            Chất liệu tơ voan mềm mại tạo cảm giác dễ chịu khi tiếp xúc với da cũng như giúp bạn luôn cảm thấy thoải mái và mát mẻ trong suốt cả ngày dài.
+                        </p>
+                        <p>
+                            Đầm có họa tiết hoa bắt mắt, có thể đi kèm với các phụ kiện như khuyên tai và một đôi giày cao gót,
+                             hoặc có thể được kết hợp với một chiếc mũ vành rộng cùng đôi sandal để tạo ra một vẻ ngoài năng lượng và phong cách. 
+                        </p>
+                        <p><strong>Thông tin mẫu:</strong></p>
+                        <p><strong>Chiều cao:</strong> 167cm</p>
+                        <p><strong>Cân nặng:</strong>50kg</p>
+                        <p><strong>Số đo ba vòng:</strong> 83-65-93 cm</p>
+
+                        <p>Mẫu mặc size M</p>
+
+                        <p>Lưu ý: Màu sắc sản xuất thực tế sẽ có chênh lệch nhỏ so với ảnh do điều kiện ánh sánh khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.</p>
+                    </div>
+
+                    <!-- chi tiết sản phẩm -->
+                    <div class="tab-content-item">
+                        <table>
+                            <tr>
+                                <td><strong>Dòng sản phẩm</strong></td>
+                                <td>Ladies</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nhóm sản phẩm</strong></td>
+                                <td>Đầm</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cổ áo</strong></td>
+                                <td>Cổ thuyên</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tay áo</strong></td>
+                                <td>Tay liền</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kiểu dáng</strong></td>
+                                <td>Chữ A</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Độ dài</strong></td>
+                                <td>Qua gối</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hoạ tiết</strong></td>
+                                <td>Hoa</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chất liệu</strong></td>
+                                <td>Voan</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <!-- bảo quản  -->
+                    <div class="tab-content-item">
+                        <p>Chi tiết sản phẩm</p>
+                        <p><strong>* Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.</strong></p>
+                        <p>* Vải dệt kim: sau khi giặt sản phẩm phải được phơi ngang tránh bai giãn.</p>
+                        <p>* Vải voan, lụa, chiffon nên giặt bằng tay.</p>
+                        <p>* Vải thô, tuytsi, kaki không có phối hay trang trí đá cườm thì có thể giặt máy.</p>
+                        <p>* Vải thô, tuytsi, kaki có phối màu tương phản hay trang trí voan, lụa, đá cườm thì cần giặt tay.</p>
+                        <p>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans. Nếu giặt thì nên lộn trái sản phẩm khi giặt, đóng khuy, kéo khóa, không nên giặt chung cùng đồ sáng màu, tránh dính màu vào các sản phẩm khác. </p>
+                        <p>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu, phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh, nên giặt cùng xà phòng pha loãng.</p>
+                        <p>* Các sản phẩm có thể giặt bằng máy thì chỉ nên để chế độ giặt nhẹ, vắt mức trung bình và nên phân các loại sản phẩm cùng màu và cùng loại vải khi giặt.</p>
+                        <p>* Nên phơi sản phẩm tại chỗ thoáng mát, tránh ánh nắng trực tiếp sẽ dễ bị phai bạc màu, nên làm khô quần áo bằng cách phơi ở những điểm gió sẽ giữ màu vải tốt hơn.</p>
+                        <p>* Những chất vải 100% cotton, không nên phơi sản phẩm bằng mắc áo mà nên vắt ngang sản phẩm lên dây phơi để tránh tình trạng rạn vải.</p>
+                        <p>* Khi ủi sản phẩm bằng bàn là và sử dụng chế độ hơi nước sẽ làm cho sản phẩm dễ ủi phẳng, mát và không bị cháy, giữ màu sản phẩm được đẹp và bền lâu hơn. Nhiệt độ của bàn là tùy theo từng loại vải. </p>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+        
+    </div>
+
+    <!-- ____________________________________sản phẩm tương tự ______________________________________ -->
+    <div class="san_pham_tuong_tu">
+        <h2>Sản phẩm tương tự</h2>
+
+        <!-- sản phẩm 1  -->
+        <div class="product-box">
+            <div class="product-box-img">
+                <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/887f219fcd5f92ec7532744422857c89.webp" >
+                <div class="img-animation">
+                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/c54474f7a6f14a017641641ab2b3c5ed.webp" >
+                </div>
+            </div>
+
+            <div class="check-type">
+                <div class="option-color">
+                    <div class="option1 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <div class="option2 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <i class="fa-light fa-heart"></i>
+
+                </div>
+
+            </div>
+
+            <div class="product-pre">
+                <a href="">
+                    <p>ĐẦM HOA DÁNG A</p>
+                </a>
+
+                <div class="pre">
+                    <div class="pre-price">
+                        <p>636.000đ</p>
+                        <p style="text-decoration: line-through; color: #565252; font-size: 18px;">1.590.000đ</p>
+                    </div>
+
+                    <!-- nút mua hàng  -->
+                    <div class="pre-buy">
+                        <!-- trước khi trỏ vào  -->
+                        <div class="pre-shopping-bag">
+                            
+                        </div>
+
+                        <!-- sau khi trỏ vào  -->
+                        <div class="behind-shopping-bag">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- sản phẩm 2  -->
+        <div class="product-box">
+            <div class="product-box-img">
+                <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/887f219fcd5f92ec7532744422857c89.webp" >
+                <div class="img-animation">
+                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/c54474f7a6f14a017641641ab2b3c5ed.webp" >
+                </div>
+            </div>
+
+            <div class="check-type">
+                <div class="option-color">
+                    <div class="option1 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <div class="option2 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <i class="fa-light fa-heart"></i>
+
+                </div>
+
+            </div>
+
+            <div class="product-pre">
+                <a href="">
+                    <p>ĐẦM HOA DÁNG A</p>
+                </a>
+
+                <div class="pre">
+                    <div class="pre-price">
+                        <p>636.000đ</p>
+                        <p style="text-decoration: line-through; color: #565252; font-size: 18px;">1.590.000đ</p>
+                    </div>
+
+                    <!-- nút mua hàng  -->
+                    <div class="pre-buy">
+                        <!-- trước khi trỏ vào  -->
+                        <div class="pre-shopping-bag">
+                            
+                        </div>
+
+                        <!-- sau khi trỏ vào  -->
+                        <div class="behind-shopping-bag">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- sản phẩm 3  -->
+        <div class="product-box">
+            <div class="product-box-img">
+                <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/887f219fcd5f92ec7532744422857c89.webp" >
+                <div class="img-animation">
+                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/c54474f7a6f14a017641641ab2b3c5ed.webp" >
+                </div>
+            </div>
+
+            <div class="check-type">
+                <div class="option-color">
+                    <div class="option1 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <div class="option2 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <i class="fa-light fa-heart"></i>
+
+                </div>
+
+            </div>
+
+            <div class="product-pre">
+                <a href="">
+                    <p>ĐẦM HOA DÁNG A</p>
+                </a>
+
+                <div class="pre">
+                    <div class="pre-price">
+                        <p>636.000đ</p>
+                        <p style="text-decoration: line-through; color: #565252; font-size: 18px;">1.590.000đ</p>
+                    </div>
+
+                    <!-- nút mua hàng  -->
+                    <div class="pre-buy">
+                        <!-- trước khi trỏ vào  -->
+                        <div class="pre-shopping-bag">
+                            
+                        </div>
+
+                        <!-- sau khi trỏ vào  -->
+                        <div class="behind-shopping-bag">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- sản phẩm 4  -->
+        <div class="product-box">
+            <div class="product-box-img">
+                <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/887f219fcd5f92ec7532744422857c89.webp" >
+                <div class="img-animation">
+                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/c54474f7a6f14a017641641ab2b3c5ed.webp" >
+                </div>
+            </div>
+
+            <div class="check-type">
+                <div class="option-color">
+                    <div class="option1 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <div class="option2 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <i class="fa-light fa-heart"></i>
+
+                </div>
+
+            </div>
+
+            <div class="product-pre">
+                <a href="">
+                    <p>ĐẦM HOA DÁNG A</p>
+                </a>
+
+                <div class="pre">
+                    <div class="pre-price">
+                        <p>636.000đ</p>
+                        <p style="text-decoration: line-through; color: #565252; font-size: 18px;">1.590.000đ</p>
+                    </div>
+
+                    <!-- nút mua hàng  -->
+                    <div class="pre-buy">
+                        <!-- trước khi trỏ vào  -->
+                        <div class="pre-shopping-bag">
+                            
+                        </div>
+
+                        <!-- sau khi trỏ vào  -->
+                        <div class="behind-shopping-bag">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+        <!-- sản phẩm 5  -->
+        <div class="product-box">
+            <div class="product-box-img">
+                <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/887f219fcd5f92ec7532744422857c89.webp" >
+                <div class="img-animation">
+                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/11/21/c54474f7a6f14a017641641ab2b3c5ed.webp" >
+                </div>
+            </div>
+
+            <div class="check-type">
+                <div class="option-color">
+                    <div class="option1 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <div class="option2 ">
+                        <div class="chose">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+
+                    <i class="fa-light fa-heart"></i>
+
+                </div>
+
+            </div>
+
+            <div class="product-pre">
+                <a href="">
+                    <p>ĐẦM HOA DÁNG A</p>
+                </a>
+
+                <div class="pre">
+                    <div class="pre-price">
+                        <p>636.000đ</p>
+                        <p style="text-decoration: line-through; color: #565252; font-size: 18px;">1.590.000đ</p>
+                    </div>
+
+                    <!-- nút mua hàng  -->
+                    <div class="pre-buy">
+                        <!-- trước khi trỏ vào  -->
+                        <div class="pre-shopping-bag">
+                            
+                        </div>
+
+                        <!-- sau khi trỏ vào  -->
+                        <div class="behind-shopping-bag">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- ________________________________________review_________________________________________ -->
+    <div class="review">
+        <h1> Customer's <span>review</span></h1>
+
+        <!-- khách hàng 1 -->
+        <div class="review_box">
+            <div class="review_card">
+                <div class="card_top">
+                    <div class="profile">
+                        <div class="profile_img">
+                            <img src="" alt="ảnh khách 1">
+                        </div>
+
+                        <div class="name-customer">
+                            <strong>Trần văn Khiên</strong>
+
+                            <div class="like">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <p> hàng phù hợp với giá tiền và giao hàng nhanh chóng cũng như tư vấn phản hồi rất nhanh</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- khách hàng 2 -->
+        <div class="review_box">
+            <div class="review_card">
+                <div class="card_top">
+                    <div class="profile">
+                        <div class="profile_img">
+                            <img src="" alt="ảnh khách 1">
+                        </div>
+
+                        <div class="name-customer">
+                            <strong>Trần văn Khiên</strong>
+
+                            <div class="like">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <p> hàng phù hợp với giá tiền và giao hàng nhanh chóng cũng như tư vấn phản hồi rất nhanh</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- khách hàng 3 -->
+        <div class="review_box">
+            <div class="review_card">
+                <div class="card_top">
+                    <div class="profile">
+                        <div class="profile_img">
+                            <img src="" alt="ảnh khách 1">
+                        </div>
+
+                        <div class="name-customer">
+                            <strong>Trần văn Khiên</strong>
+
+                            <div class="like">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <p> hàng phù hợp với giá tiền và giao hàng nhanh chóng cũng như tư vấn phản hồi rất nhanh</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- khách hàng 4 -->
+        <div class="review_box">
+            <div class="review_card">
+                <div class="card_top">
+                    <div class="profile">
+                        <div class="profile_img">
+                            <img src="" alt="ảnh khách 1">
+                        </div>
+
+                        <div class="name-customer">
+                            <strong>Trần văn Khiên</strong>
+
+                            <div class="like">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <p> hàng phù hợp với giá tiền và giao hàng nhanh chóng cũng như tư vấn phản hồi rất nhanh</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ________________________________ nút trở về trang chủ________________________ -->
+
+    <div class="back-home">
+
+    </div>
+
+    <!-- _________________________________ nút chat với tư vấn viên_________________________ -->
+    
+    <!-- jqurey -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
