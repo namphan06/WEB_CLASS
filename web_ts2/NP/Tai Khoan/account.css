@@ -39,31 +39,31 @@ a {
   width: 60%;
   margin: 0 auto;
 }
-.bx1 .menu {
+.bx1 .menudk {
   padding: 0 50px;
 }
-.bx1 .menu .account {
+.bx1 .menudk .account {
   display: flex;
   padding-bottom: 20px;
 }
-.bx1 .menu img {
+.bx1 .menudk img {
   width: 50px;
   height: 50px;
   margin: 0 10px 0 0;
   border-radius: 50%;
 }
-.bx1 .menu .td {
+.bx1 .menudk .td {
   padding-bottom: 20px;
   color: #48cab2;
 }
-.bx1 .menu .lst > ul {
+.bx1 .menudk .lst > ul {
   list-style: none;
   padding-left: 10px;
 }
-.bx1 .menu .lst > ul > li {
+.bx1 .menudk .lst > ul > li {
   padding-bottom: 10px;
 }
-.bx1 .menu .lst > ul > li a:hover {
+.bx1 .menudk .lst > ul > li a:hover {
   color: #48cab2;
 }
 .bx1 .ipt {

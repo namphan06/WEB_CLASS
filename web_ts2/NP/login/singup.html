@@ -25,7 +25,7 @@
           <span
             ><b> <i class="fa-solid fa-chevron-right"></i> </b
           ></span>
-          <a href="" style="color: #48cab2">Đăng nhập tài khoản </a>
+          <a href="" style="color: #48cab2">Đăng ký tài khoản </a>
         </div>
       </div>
       <div class="title"><p style="cursor: context-menu">ĐĂNG KÝ</p></div>
@@ -64,7 +64,7 @@
       </form>
       <div class="lg">
         <span style="cursor: context-menu">Đã có tài khoản, đăng nhập </span
-        ><a href="./đn.html" style="text-decoration: underline">tại đây</a>
+        ><a href="./singin.html" style="text-decoration: underline">tại đây</a>
       </div>
       <div class="lk">
         <p style="margin-bottom: 15px; cursor: context-menu">
@@ -96,6 +96,12 @@
         const phone_error = document.getElementById('phone-error')
         const password_error = document.getElementById('password-error')
 
+        const user = {
+          email: '',
+          password: '',
+          name: '',
+          phone: ''
+        };
 
         form.addEventListener('submit',(e)=>{
 
@@ -106,47 +112,59 @@
 
           if(first_name.value === '' || first_name.value == null){
             e.preventDefault();
-            first_name_error.innerHTML = "First name is required";
+            first_name_error.innerHTML = "Vui lòng không để trống";
+            isValid=false
           }
           else{
             first_name_error.innerHTML = "";
+            user.name= first_name.value;
           }
           if(last_name.value === '' || last_name.value == null){
             e.preventDefault();
-            last_name_error.innerHTML = "Last name is required";
+            last_name_error.innerHTML = "Vui lòng không để trống";
+            isValid=false
           }else{
             last_name_error.innerHTML = "";
           }
           if(!phone.value.match(phone_check)){
             e.preventDefault();
-            phone_error.innerHTML = "Phone is required";
+            phone_error.innerHTML = "Nhập lại";
+            isValid=false
           }
           else{
             phone_error.innerHTML = "";
+            user.phone=phone.value;
           }
           if(password.value === '' || password.value == null){
             e.preventDefault();
-            password_error.innerHTML = "Password is required";
+            password_error.innerHTML = "Vui lòng không để trống";
+            isValid=false
           }
           if(password.value.length < 8){
             e.preventDefault();
-            password_error.innerHTML = "Password must be more than 8 characters";
+            password_error.innerHTML = "Nhập tối thiểu 8 kí tự";
+            isValid=false
           }
-          
           else{
             password_error.innerHTML = "";
+            user.password=password.value
           }
           if(!email.value.match(email_check)){
             e.preventDefault();
-            email_error.innerHTML = "Valid Email is required";
+            email_error.innerHTML = "Không đúng định dạng email";
+            isValid=false
           }
           else{
             email_error.innerHTML = "";
+            user.email=email.value
           }
-
-          if (!isValid) {
-      e.preventDefault();
-    }
+          console.log("isValid:", isValid); // Kiểm tra giá trị của isValid
+          if (isValid) {
+            let json = JSON.stringify(user);
+            localStorage.setItem(user.email,json);
+            alert("Đăng kí thành công");
+            window.location.href = "./singin.html";
+          }
         })
       </script>
       <!-- menu & footer,header -->

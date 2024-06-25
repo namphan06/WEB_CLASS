@@ -48,7 +48,7 @@
       </form>
       <div class="lg">
         <span style="cursor: context-menu">Chưa có tài khoản, đăng ký </span
-        ><a href="./đk.html" style="text-decoration: underline">tại đây</a>
+        ><a href="./singup.html" style="text-decoration: underline">tại đây</a>
       </div>
       <div class="lk">
         <p style="margin-bottom: 15px; cursor: context-menu">
@@ -75,32 +75,39 @@
         const password_error = document.getElementById('password-error')
 
         form.addEventListener('submit',(e)=>{
+          e.preventDefault();
 
 
           let isValid=true;
-          if(password.value === '' || password.value == null){
-            e.preventDefault();
-            password_error.innerHTML = "Password is required";
+          // if(password.value === '' || password.value == null){
+          //   e.preventDefault();
+          //   password_error.innerHTML = "Password is required";
+          // }
+          // if(password.value != '12345678'){
+          //   e.preventDefault();
+          //   password_error.innerHTML = "Password error";
+          // }
+          
+          // else{
+          //   password_error.innerHTML = "";
+          // }
+          if(email.value === '' || password.value === ''){
+            alert("Vui lòng không để trống")
           }
-          if(password.value != '12345678'){
-            e.preventDefault();
-            password_error.innerHTML = "Password error";
-          }
+          // if(email.value != 'ABC@gmail.com'){
+          //   e.preventDefault();
+          //   email_error.innerHTML = "Email error";
+          // }
           
           else{
             password_error.innerHTML = "";
-          }
-          if(email.value === '' || email.value == null){
-            e.preventDefault();
-            email_error.innerHTML = "Password is required";
-          }
-          if(email.value != 'ABC@gmail.com'){
-            e.preventDefault();
-            email_error.innerHTML = "Email error";
-          }
-          
-          else{
-            password_error.innerHTML = "";
+            const user = JSON.parse(localStorage.getItem(email.value));
+            if(user.email === email.value && user.password === password.value){
+              alert("Đăng nhập thành công")
+              window.location.href = "../homepage/homepage.html";
+            }else{
+              alert("Đăng nhập thất bại")
+            }
           }
           if (!isValid) {
       e.preventDefault();
@@ -172,6 +179,13 @@
           footerLink.rel = "stylesheet";
           footerLink.href = "../Header $ Footer/footer.css";
           document.head.appendChild(footerLink);
+
+
+
+
+
+
+          
         });
       </script>
       <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
