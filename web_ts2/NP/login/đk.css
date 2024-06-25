@@ -51,7 +51,7 @@ a {
   font-size: 14px;
   align-items: flex-start;
   flex-direction: column;
-  width: 50%;
+  width: 30%;
 }
 .bx-input .input-box input {
   height: 50px;
@@ -60,7 +60,7 @@ a {
   border: 1px solid #eaebf3;
   width: 100%;
   margin-top: 5px;
-  outline: none;
+  /* outline: none; */
 }
 .bx-input .input-box label {
   font-size: 16px;
@@ -70,6 +70,7 @@ a {
 }
 .btn {
   text-align: center;
+  margin-top: 10px;
 }
 .btn input:hover {
   background-color: white;
@@ -85,7 +86,7 @@ a {
   line-height: 50px;
   font-size: 16px;
   padding: 0 20px;
-  width: 50%;
+  width: 30%;
   margin-bottom: 20px;
 }
 .lg {
@@ -104,6 +105,9 @@ a {
     width: 100%;
   }
   .btn button {
+    width: 100%;
+  }
+  .btn input {
     width: 100%;
   }
 }

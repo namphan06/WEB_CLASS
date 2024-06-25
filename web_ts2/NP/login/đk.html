@@ -29,31 +29,37 @@
         </div>
       </div>
       <div class="title"><p style="cursor: context-menu">ĐĂNG KÝ</p></div>
-      <form>
+      <form id="form">
         <div class="bx-input">
           <div class="input-box">
             <label for="">Họ<sup style="color: red">*</sup></label>
-            <input type="text" placeholder="Họ" />
+            <input type="text" id="last-name" placeholder="Họ" />
+            <span id="last-name-error" style="color: red;"></span>
           </div>
           <div class="input-box">
             <label for="">Tên<sup style="color: red">*</sup></label>
-            <input type="text" placeholder="Tên" />
+            <input type="text" id="first-name" placeholder="Tên" />
+            <span id="first-name-error" style="color: red;"></span>
           </div>
           <div class="input-box">
             <label for="">Email<sup style="color: red">*</sup></label>
-            <input type="text" placeholder="Email" />
+            <input type="text" id="email" placeholder="Email" />
+            <span id="email-error" style="color: red;"></span>
           </div>
           <div class="input-box">
             <label for="">Số điện thoại<sup style="color: red">*</sup></label>
-            <input type="text" placeholder="Số điện thoại" />
+            <input type="text" id="phone" placeholder="Số điện thoại" />
+            <span id="phone-error" style="color: red;"></span>
           </div>
           <div class="input-box">
             <label for="">Mật khẩu<sup style="color: red">*</sup></label>
-            <input type="password" placeholder="Mật khẩu" />
+            <input type="password" id="password" placeholder="Mật khẩu" />
+            <span id="password-error" style="color: red;"></span>
           </div>
         </div>
         <div class="btn">
           <input type="submit" value="Đăng ký" />
+          
         </div>
       </form>
       <div class="lg">
@@ -76,7 +82,74 @@
         /></a>
       </div>
       <div id="footer"></div>
+      <!-- validate -->
+      <script>
+        const last_name = document.getElementById('last-name')
+        const first_name = document.getElementById('first-name')
+        const email = document.getElementById('email')
+        const phone = document.getElementById('phone')
+        const password = document.getElementById('password')
+        const form = document.getElementById('form')
+        const first_name_error = document.getElementById('first-name-error')
+        const email_error = document.getElementById('email-error')
+        const last_name_error = document.getElementById('last-name-error')
+        const phone_error = document.getElementById('phone-error')
+        const password_error = document.getElementById('password-error')
 
+
+        form.addEventListener('submit',(e)=>{
+
+          var email_check = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+          var phone_check =  /(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/g;
+
+          let isValid=true;
+
+          if(first_name.value === '' || first_name.value == null){
+            e.preventDefault();
+            first_name_error.innerHTML = "First name is required";
+          }
+          else{
+            first_name_error.innerHTML = "";
+          }
+          if(last_name.value === '' || last_name.value == null){
+            e.preventDefault();
+            last_name_error.innerHTML = "Last name is required";
+          }else{
+            last_name_error.innerHTML = "";
+          }
+          if(!phone.value.match(phone_check)){
+            e.preventDefault();
+            phone_error.innerHTML = "Phone is required";
+          }
+          else{
+            phone_error.innerHTML = "";
+          }
+          if(password.value === '' || password.value == null){
+            e.preventDefault();
+            password_error.innerHTML = "Password is required";
+          }
+          if(password.value.length < 8){
+            e.preventDefault();
+            password_error.innerHTML = "Password must be more than 8 characters";
+          }
+          
+          else{
+            password_error.innerHTML = "";
+          }
+          if(!email.value.match(email_check)){
+            e.preventDefault();
+            email_error.innerHTML = "Valid Email is required";
+          }
+          else{
+            email_error.innerHTML = "";
+          }
+
+          if (!isValid) {
+      e.preventDefault();
+    }
+        })
+      </script>
+      <!-- menu & footer,header -->
       <script>
         document.addEventListener("DOMContentLoaded", function() {
           function setupEventListeners() {

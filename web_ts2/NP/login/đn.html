@@ -29,15 +29,17 @@
         </div>
       </div>
       <div class="title"><p style="cursor: context-menu">ĐĂNG NHẬP</p></div>
-      <form>
+      <form id="form">
         <div class="bx-input">
           <div class="input-box">
             <label for="">Email<sup style="color: red">*</sup></label>
-            <input type="text" placeholder="Email" />
+            <input type="text" id="email" placeholder="Email" />
+            <span id="email-error" style="color: red;"></span>
           </div>
           <div class="input-box">
             <label for="">Mật khẩu<sup style="color: red">*</sup></label>
-            <input type="password" placeholder="Mật khẩu" />
+            <input type="password" id="password" placeholder="Mật khẩu" />
+            <span id="password-error" style="color: red;"></span>
           </div>
         </div>
         <div class="btn">
@@ -64,7 +66,48 @@
         /></a>
       </div>
       <div id="footer"></div>
+      <!-- Validate -->
+      <script>
+        const email = document.getElementById('email')
+        const password = document.getElementById('password')
 
+        const email_error = document.getElementById('email-error')
+        const password_error = document.getElementById('password-error')
+
+        form.addEventListener('submit',(e)=>{
+
+
+          let isValid=true;
+          if(password.value === '' || password.value == null){
+            e.preventDefault();
+            password_error.innerHTML = "Password is required";
+          }
+          if(password.value != '12345678'){
+            e.preventDefault();
+            password_error.innerHTML = "Password error";
+          }
+          
+          else{
+            password_error.innerHTML = "";
+          }
+          if(email.value === '' || email.value == null){
+            e.preventDefault();
+            email_error.innerHTML = "Password is required";
+          }
+          if(email.value != 'ABC@gmail.com'){
+            e.preventDefault();
+            email_error.innerHTML = "Email error";
+          }
+          
+          else{
+            password_error.innerHTML = "";
+          }
+          if (!isValid) {
+      e.preventDefault();
+    }
+        })
+      </script>
+      <!-- menu & footer,header -->
       <script>
         document.addEventListener("DOMContentLoaded", function() {
           function setupEventListeners() {
