@@ -303,6 +303,7 @@
     <div id="footer"></div>
 
     <script>
+      // cuộn
       var list_img = document.querySelector(".bx1");
       var imgs = document.querySelectorAll(".bx1 img");
       var length = imgs.length;
@@ -311,8 +312,8 @@
         current = (current + 1) % length;
         var width = imgs[0].offsetWidth;
         list_img.style.transform = `translateX(${width * -1 * current}px)`;
-      }, 4000);
-
+      }, 3000);
+      // điều hướng lên
       $(document).ready(function () {
         $(window).scroll(function () {
           if ($(this).scrollTop()) {
@@ -323,7 +324,7 @@
         });
 
         $(".goto").click(function () {
-          $("html, body").animate({ scrollTop: 0 }, 5000);
+          $("html, body").animate({ scrollTop: 0 }, 3000);
         });
       });
 
